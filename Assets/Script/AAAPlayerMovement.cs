@@ -2,39 +2,81 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AAAPlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // 控制移动速度
-    public float gravity = -9.81f; // 模拟重力
-    public CharacterController controller;
+    public float moveSpeed = 5f; // Speed of movement
+    public float mouseSensitivity = 100f; // Sensitivity of mouse look
+    public float gravity = -9.81f; // Gravity for the player
+    public CharacterController controller; // CharacterController component
 
-    private Vector3 velocity;
+    private Vector3 velocity; // For gravity simulation
+    private float xRotation = 0f; // Rotation around the X-axis (up/down)
+    private float yRotation = 0f; // Rotation around the Y-axis (left/right)
 
     void Start()
     {
-        // 获取角色控制器组件
+        // Ensure the cursor is locked to the screen and hidden
+        Cursor.lockState = CursorLockMode.Locked;
+
+        // Get the CharacterController component
         controller = GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        // 获取输入
-        float moveX = Input.GetAxis("Horizontal"); // 左右移动
-        float moveZ = Input.GetAxis("Vertical");   // 前后移动
+        // Handle player movement using WASD
+        HandleMovement();
 
-        // 修正后的移动方向（忽略X轴旋转的影响）
-        Vector3 move = new Vector3(moveX, 0, moveZ);
+        // Handle mouse look to rotate the player
+        HandleMouseLook();
 
-        // 将世界空间转换为局部空间
-        move = transform.TransformDirection(move);
-
-        // 使用 CharacterController 移动玩家
-        controller.Move(move * moveSpeed * Time.deltaTime);
-
-        // 添加重力效果
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+        // Apply gravity
+        ApplyGravity();
     }
 
+    void HandleMovement()
+    {
+        // Get input from WASD or arrow keys
+        float moveX = Input.GetAxis("Horizontal"); // A/D keys (left/right)
+        float moveZ = Input.GetAxis("Vertical");   // W/S keys (forward/backward)
 
+        // Calculate movement direction based on the player's current orientation
+        Vector3 move = transform.right * moveX + transform.forward * moveZ;
+
+        // Move the player using the character controller
+        controller.Move(move * moveSpeed * Time.deltaTime);
+    }
+
+    void HandleMouseLook()
+    {
+        // Get mouse input for rotation
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        // Rotate the player horizontally (Y-axis) based on mouseX
+        yRotation += mouseX;
+        transform.rotation = Quaternion.Euler(0f, yRotation, 0f);
+
+        // Rotate the camera vertically (X-axis) based on mouseY (up/down)
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Clamp to prevent flipping
+
+        Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+    }
+
+    void ApplyGravity()
+    {
+        // Check if the player is on the ground and reset vertical velocity if so
+        if (controller.isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f; // Slight downward force to keep the player grounded
+        }
+
+        // Apply gravity
+        velocity.y += gravity * Time.deltaTime;
+
+        // Apply vertical velocity to the player
+        controller.Move(velocity * Time.deltaTime);
+    }
 }
