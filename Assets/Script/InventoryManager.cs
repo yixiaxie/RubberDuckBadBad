@@ -25,5 +25,6 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(Item newItem)
     {
         items.Add(newItem); // Adjusted to match the type
+        Debug.Log("Item added: " + newItem.Itemname);  // Log item names when they are added
     }
 }

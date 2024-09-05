@@ -30,6 +30,16 @@ public class DialogueManager : MonoBehaviour
     // This method populates the inventory UI with buttons for each collected duck (item)
     void PopulateInventory()
     {
+        //debug the process and ensure that items are correctly transferred and buttons are created.
+        Debug.Log("Populating Inventory...");
+
+        foreach (Item item in inventoryManager.items)
+        {
+            Debug.Log("Found item: " + item.Itemname);
+            // The rest of the code to create buttons...
+        }
+
+
         // Clear previous items in the inventory panel (in case of scene reload)
         foreach (Transform child in itemsParent)
         {
