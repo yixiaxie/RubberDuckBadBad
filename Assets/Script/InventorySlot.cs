@@ -36,35 +36,78 @@ public class InventorySlot : MonoBehaviour
         icon.enabled = false;
     }
 
+    //public void RemoveItem()
+    //{
+    //    Debug.Log("RemoveItem called.");
+    //    if (item == null)
+    //    {
+    //        Debug.LogWarning("Item is null. Cannot proceed.");
+    //        return;
+    //    }
+    //    // 
+    //    if (item != null)
+    //    {
+    //        int index = Inventory.instance.items.IndexOf(item);
+    //        if (index >= 0)
+    //        {
+    //            Inventory.instance.RemoveItemAtIndex(index);
+    //            string duckInfo = item.duckInfo;
+    //            Debug.Log("Duck info: " + duckInfo);
+    //            ChatGptManager chatGptManager = FindObjectOfType<ChatGptManager>();
+    //            if (chatGptManager != null)
+    //            {
+    //                chatGptManager.AskChatGPT(duckInfo);
+    //            }
+    //            else
+    //            {
+    //                Debug.LogError("ChatGptManager not found.");
+    //            }
+    //        }
+
+
+    //    }
+    //    else
+    //    {
+    //        Debug.LogWarning("nothing in this slot");
+    //    }
+    //  }
+
     public void RemoveItem()
     {
+        Debug.Log("RemoveItem called.");
 
-
-        // 
-        if (item != null)
+        if (item == null)
         {
-            int index = Inventory.instance.items.IndexOf(item);
-            if (index >= 0)
-            {
-                Inventory.instance.RemoveItemAtIndex(index);
-                string duckInfo = item.duckInfo;
-                ChatGptManager chatGptManager = FindObjectOfType<ChatGptManager>();
-                if (chatGptManager != null)
-                {
-                    //chatGptManager.AskChatGPT(duckInfo);
-                }
-                else
-                {
-                    Debug.LogError("ChatGptManager not found.");
-                }
-            }
+            Debug.LogWarning("Item is null. Cannot proceed.");
+            return;
+        }
 
+        // Check if the item exists in the inventory
+        int index = Inventory.instance.items.IndexOf(item);
+        if (index >= 0 && index < Inventory.instance.items.Count)
+        {
+            Inventory.instance.RemoveItemAtIndex(index);
+
+
+            //GPT
+            string duckInfo = item.duckInfo;
+            Debug.Log("Duck info: " + duckInfo);
             
+            ChatGptManager chatGptManager = FindObjectOfType<ChatGptManager>();
+            if (chatGptManager != null)
+            {
+                chatGptManager.AskChatGPT(duckInfo);
+            }
+            else
+            {
+                Debug.LogError("ChatGptManager not found.");
+            }
         }
         else
         {
-            Debug.LogWarning("nothing in this slot");
+            Debug.LogError("Item index out of range or item is not found in inventory.");
         }
-
     }
+
+
 }
