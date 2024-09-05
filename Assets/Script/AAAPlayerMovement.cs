@@ -28,7 +28,7 @@ public class AAAPlayerMovement : MonoBehaviour
         // Handle player movement using WASD
         HandleMovement();
 
-        // Handle mouse look to rotate the player
+        //// Handle mouse look to rotate the player
         HandleMouseLook();
 
         // Apply gravity
@@ -46,10 +46,13 @@ public class AAAPlayerMovement : MonoBehaviour
 
         // Move the player using the character controller
         controller.Move(move * moveSpeed * Time.deltaTime);
+
+        
     }
 
     void HandleMouseLook()
     {
+
         // Get mouse input for rotation
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;

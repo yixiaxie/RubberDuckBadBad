@@ -47,10 +47,19 @@ public class InventorySlot : MonoBehaviour
             if (index >= 0)
             {
                 Inventory.instance.RemoveItemAtIndex(index);
+                string duckInfo = item.duckInfo;
+                ChatGptManager chatGptManager = FindObjectOfType<ChatGptManager>();
+                if (chatGptManager != null)
+                {
+                    //chatGptManager.AskChatGPT(duckInfo);
+                }
+                else
+                {
+                    Debug.LogError("ChatGptManager not found.");
+                }
             }
 
-            // Clear this slot
-            //ClearSlot();
+            
         }
         else
         {

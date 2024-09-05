@@ -6,12 +6,52 @@ public class PickupItem : MonoBehaviour
 
     public Item item;
     public LayerMask ItemLayer;
+    public float pickupRange = 3f;
 
-    private void OnMouseDown()
+    //private void OnMouseDown()
+    //{
+    //    Debug.Log("Object has been clicked: " + gameObject.name);
+    //    PickUp();
+    //}
+
+
+    private void Update()
     {
-        Debug.Log("Object has been clicked: " + gameObject.name);
-        PickUp();
+        // 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("E key pressed");
+            // 
+            if (IsPlayerInRange())
+            {
+                PickUp();
+                Debug.Log("playerinrange");
+            }
+            else
+            {
+                Debug.Log("Player not in range");
+            }
+        }
     }
+
+    bool IsPlayerInRange()
+    {
+        // 
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, pickupRange, ItemLayer);
+
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("Player"))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+
 
     void PickUp()
     {

@@ -8,6 +8,7 @@ public class Item : ScriptableObject
 {
     public string Itemname = "New Item";
     public Sprite icon = null;
+    public string duckInfo;
    
   
 
@@ -18,5 +19,7 @@ public class Item : ScriptableObject
         Debug.Log("using" + name);
 
     }
+
+    
 
 }

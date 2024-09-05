@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cf4b9bc856351f40b8db15fa1c81a30, type: 3}
-  m_Name: Duck1
+  m_Name: deepblueDuck
   m_EditorClassIdentifier: 
-  Itemname: Duck1
-  icon: {fileID: 21300000, guid: 406fdd7c9a6ff8c458dadaa2af675d50, type: 3}
-  duckInfo: 'name:Astraea; color:grey; attached with: barnacles'
+  Itemname: deepblueDuck
+  icon: {fileID: 21300000, guid: afd57033033b4f44b84f1b4ac80f0ba5, type: 3}
+  duckInfo: Triton, deep blue, blue-ringed Octopus, It fused with a blue-ringed octopus
+    and became a blue-ringed duck.

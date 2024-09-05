@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Itemname: Duck2
   icon: {fileID: 21300000, guid: fd877422eb0df08428c18b73722e33e9, type: 3}
+  duckInfo: 'name:Nyx; color:violet; attached with: diatoms'
