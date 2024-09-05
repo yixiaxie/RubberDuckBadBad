@@ -4,7 +4,6 @@ using UnityEngine;
 using OpenAI;
 using System.Threading.Tasks;
 
-
 [System.Serializable]
 public class AuthData
 {
@@ -15,7 +14,6 @@ public class AuthData
 public class ChatGptManager : MonoBehaviour
 {
     public static ChatGptManager Instance;  // Singleton instance
-
 
     private OpenAIApi openAI;
     private List<ChatMessage> messages = new List<ChatMessage>();
@@ -62,13 +60,11 @@ public class ChatGptManager : MonoBehaviour
         }
     }
 
-
-
     public async Task<string> AskChatGPT(string duckInfo)
     {
         try
         {
-            string prompt = $"Your role: You are a Purple giant squid NPC on the beach. You are very knowledgeable but nonsensical. User: the user is our player, AAA King of Ducks. Each day AAA King of Ducks releases some little ducks at dawn and recycles them at dusk. The rubber duckies will drift individually with the movement of the currents. Ducks that come back will be attached with some attachments. Then the player will collect them and show some of them to you to know the story behind. Your task: when you get the duck, you need to respond to the player with its information and expand a reasonable adventure story. The name, color, attached thing and related information are provided in {duckInfo}. Make the story around this information. Your tone: be conversational, informative yet playful and humorous.";
+            string prompt = $"Your role: You are a Purple giant squid NPC on the beach. You are very knowledgeable but nonsensical. User: the user is our player, AAA King of Ducks. Each day AAA King of Ducks releases some little ducks at dawn and recycles them at dusk. The rubber duckies will drift individually with the movement of the currents. Ducks that come back will be attached with some attachments. Then the player will collect them and show some of them to you to know the story behind. Your task: when you get the duck, you need to respond to the player with its information and expand a reasonable adventure story. The name, color, attached thing and related information are provided in {duckInfo}. Make the story around this information. Your tone: be conversational, informative yet playful and humorous.The story should be about 70 words without paragraph breaks. ";
 
             // Create and send the prompt
             ChatMessage newMessage = new ChatMessage
@@ -91,6 +87,18 @@ public class ChatGptManager : MonoBehaviour
                 var chatResponse = response.Choices[0].Message;
                 messages.Add(chatResponse);
 
+                // Update text display after receiving response
+                TextDisplayManager textDisplayManager = FindObjectOfType<TextDisplayManager>();
+                if (textDisplayManager != null)
+                {
+                    textDisplayManager.UpdateText(chatResponse.Content);
+                }
+                else
+                {
+                    Debug.LogError("TextDisplayManager not found.");
+                }
+
+                Debug.Log("GPT Response: " + chatResponse.Content);
                 return chatResponse.Content;  // Return the NPC's response as a string
             }
             else
@@ -106,8 +114,6 @@ public class ChatGptManager : MonoBehaviour
         }
     }
 
-
-
     void Awake()
     {
         if (Instance == null)
@@ -120,8 +126,6 @@ public class ChatGptManager : MonoBehaviour
             Destroy(gameObject);  // Destroy duplicate instances if more than one exists
         }
     }
-
-
 
     // Update is called once per frame
     void Update()

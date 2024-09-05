@@ -333,6 +333,7 @@ GameObject:
   - component: {fileID: 89042040}
   - component: {fileID: 89042039}
   - component: {fileID: 89042038}
+  - component: {fileID: 89042041}
   m_Layer: 6
   m_Name: pinkDuck
   m_TagString: Untagged
@@ -394,6 +395,18 @@ Transform:
   - {fileID: 126054365}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -46.471, y: -51.693, z: 0}
+--- !u!114 &89042041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89042037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &97612711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,6 +1525,7 @@ GameObject:
   - component: {fileID: 398726314}
   - component: {fileID: 398726313}
   - component: {fileID: 398726312}
+  - component: {fileID: 398726315}
   m_Layer: 6
   m_Name: greyDuck
   m_TagString: Untagged
@@ -1573,6 +1587,18 @@ Transform:
   - {fileID: 1694143532}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -42.507, y: 0, z: 0}
+--- !u!114 &398726315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398726311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &418530467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1911,6 +1937,7 @@ GameObject:
   - component: {fileID: 592023334}
   - component: {fileID: 592023333}
   - component: {fileID: 592023332}
+  - component: {fileID: 592023335}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1968,6 +1995,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &592023335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592023331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &594825157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,6 +2246,7 @@ GameObject:
   - component: {fileID: 702624157}
   - component: {fileID: 702624156}
   - component: {fileID: 702624155}
+  - component: {fileID: 702624158}
   m_Layer: 6
   m_Name: brownDuck
   m_TagString: Untagged
@@ -2268,6 +2308,18 @@ Transform:
   - {fileID: 418530468}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -33.514}
+--- !u!114 &702624158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702624154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &754783341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2925,6 +2977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1067892591}
   - component: {fileID: 1067892590}
+  - component: {fileID: 1067892592}
   - component: {fileID: 1067892589}
   m_Layer: 6
   m_Name: lightblueDuck
@@ -2987,6 +3040,18 @@ Transform:
   - {fileID: 1492275353}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1067892592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067892588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1167494080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3682,7 +3747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1397822802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3722,6 +3787,7 @@ GameObject:
   - component: {fileID: 1407943750}
   - component: {fileID: 1407943749}
   - component: {fileID: 1407943748}
+  - component: {fileID: 1407943751}
   m_Layer: 6
   m_Name: deepblueDuck
   m_TagString: Untagged
@@ -3783,6 +3849,18 @@ Transform:
   - {fileID: 1320145765}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -9.62}
+--- !u!114 &1407943751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407943747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1429681172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3939,6 +4017,7 @@ GameObject:
   - component: {fileID: 1438927797}
   - component: {fileID: 1438927796}
   - component: {fileID: 1438927795}
+  - component: {fileID: 1438927800}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4042,6 +4121,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1438927800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438927794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1483584561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4189,6 +4280,7 @@ GameObject:
   - component: {fileID: 1497112026}
   - component: {fileID: 1497112025}
   - component: {fileID: 1497112024}
+  - component: {fileID: 1497112027}
   m_Layer: 6
   m_Name: greenDuck
   m_TagString: Untagged
@@ -4250,6 +4342,18 @@ Transform:
   - {fileID: 68367855}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1497112027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497112023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1505555705
 GameObject:
   m_ObjectHideFlags: 0
@@ -4260,6 +4364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505555708}
   - component: {fileID: 1505555707}
+  - component: {fileID: 1505555709}
   - component: {fileID: 1505555706}
   m_Layer: 6
   m_Name: purpleDuck
@@ -4322,6 +4427,18 @@ Transform:
   - {fileID: 1995526336}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -150.075, z: 0}
+--- !u!114 &1505555709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505555705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1513394394
 GameObject:
   m_ObjectHideFlags: 0
@@ -4933,6 +5050,7 @@ GameObject:
   - component: {fileID: 1765293644}
   - component: {fileID: 1765293643}
   - component: {fileID: 1765293642}
+  - component: {fileID: 1765293645}
   m_Layer: 6
   m_Name: redDuck
   m_TagString: Untagged
@@ -4994,6 +5112,18 @@ Transform:
   - {fileID: 1315851095}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 249.325, y: -27.013, z: 90}
+--- !u!114 &1765293645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765293641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1792714763
 GameObject:
   m_ObjectHideFlags: 0
@@ -5746,6 +5876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1947851107}
   - component: {fileID: 1947851106}
+  - component: {fileID: 1947851109}
   - component: {fileID: 1947851108}
   m_Layer: 6
   m_Name: violetDuck
@@ -5773,8 +5904,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9590759, y: 1.557663, z: 1.7109528}
-  m_Center: {x: -1.590889, y: -6.1591187, z: 5.998871}
+  m_Size: {x: 0.95908034, y: 1.3429604, z: 1.7109525}
+  m_Center: {x: -1.5907884, y: -5.7360516, z: 5.998751}
 --- !u!4 &1947851107
 Transform:
   m_ObjectHideFlags: 0
@@ -5808,6 +5939,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   pickupRange: 3
+--- !u!114 &1947851109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947851105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1958404600
 GameObject:
   m_ObjectHideFlags: 0
@@ -5818,6 +5961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1958404602}
   - component: {fileID: 1958404601}
+  - component: {fileID: 1958404603}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -5854,6 +5998,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1958404603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958404600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1995526335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6114,6 +6270,7 @@ GameObject:
   - component: {fileID: 2118409559}
   - component: {fileID: 2118409561}
   - component: {fileID: 2118409560}
+  - component: {fileID: 2118409562}
   m_Layer: 6
   m_Name: whiteDuck
   m_TagString: Untagged
@@ -6175,6 +6332,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   pickupRange: 3
+--- !u!114 &2118409562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118409558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0371f876d9277fa48aad2049a043e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2125658508 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 548677ed38a66304392701040975e1fd, type: 3}

@@ -72,7 +72,7 @@ public class InventorySlot : MonoBehaviour
     //    }
     //  }
 
-    public void RemoveItem()
+    public async void RemoveItem()
     {
         Debug.Log("RemoveItem called.");
 
@@ -84,16 +84,19 @@ public class InventorySlot : MonoBehaviour
 
         // Check if the item exists in the inventory
         int index = Inventory.instance.items.IndexOf(item);
-        if (index >= 0 && index < Inventory.instance.items.Count)
-        {
+        string duckInfo = item.duckInfo;
+        Debug.Log("Duck info: " + duckInfo);
+
+        //if (index >= 0 && index < Inventory.instance.items.Count)
+        //{
             //GPT
-            string duckInfo = item.duckInfo;
-            Debug.Log("Duck info: " + duckInfo);
+            //string duckInfo = item.duckInfo;
+            //Debug.Log("Duck info: " + duckInfo);
             
             ChatGptManager chatGptManager = FindObjectOfType<ChatGptManager>();
             if (chatGptManager != null)
             {
-               // chatGptManager.AskChatGPT(duckInfo); 
+                await chatGptManager.AskChatGPT(duckInfo); 
             }
             else
             {
@@ -102,11 +105,11 @@ public class InventorySlot : MonoBehaviour
 
             Inventory.instance.RemoveItemAtIndex(index);
 
-        }
-        else
-        {
-            Debug.LogError("Item index out of range or item is not found in inventory.");
-        }
+        //}
+        //else
+        //{
+        //    Debug.LogError("Item index out of range or item is not found in inventory.");
+        //}
     }
 
 

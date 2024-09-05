@@ -62,7 +62,8 @@ public class PickupItem : MonoBehaviour
             Debug.Log("wasPickedUp=" + wasPickedUp);
             if (wasPickedUp)
             {
-                Destroy(gameObject);  // ;  // 
+                //Destroy(gameObject);  // ;  // 
+                gameObject.SetActive(false);
             }
         }
         else

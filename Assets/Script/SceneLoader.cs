@@ -17,6 +17,8 @@ public class SceneLoader : MonoBehaviour
 
     void LoadDialogueScene()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(dialogueSceneName);
     }
 }
