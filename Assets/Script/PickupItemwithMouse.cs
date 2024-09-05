@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickupItemwithMouse : MonoBehaviour
 {
@@ -8,13 +9,35 @@ public class PickupItemwithMouse : MonoBehaviour
     public LayerMask ItemLayer;
     public float pickupRange = 3f;
 
+    public string dialogueSceneName = "DialogueScene"; // Make sure to match the exact name of your DialogueScene
+
+    /*
     private void OnMouseDown()
     {
         Debug.Log("Object has been clicked: " + gameObject.name);
         PickUp();
     }
+    */
 
 
+    private void OnMouseDown()
+    {
+        // If the NPC is clicked, load the dialogue scene
+        if (gameObject.CompareTag("NPC"))
+        {
+            LoadDialogueScene();
+        }
+        else
+        {
+            Debug.Log("Object has been clicked: " + gameObject.name);
+            PickUp();
+        }
+    }
+
+    void LoadDialogueScene()
+    {
+        SceneManager.LoadScene(dialogueSceneName);
+    }
     //private void Update()
     //{
     //    // 

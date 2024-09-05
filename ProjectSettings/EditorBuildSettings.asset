@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/NPC.unity
+    guid: 04e95cfb3c3b7c54ca8f73d8e1db8079
+  - enabled: 1
+    path: Assets/Scenes/DialogueScene.unity
+    guid: 026ef232565ea324fa09f20b8a73c551
   m_configObjects: {}
